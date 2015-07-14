@@ -9,7 +9,7 @@
 import Foundation
 import Result
 
-public class Future<T, Error> {
+public class Future<T, Error: ErrorType> {
     public typealias ResultType = Result<T, Error>
     
     // MARK: Properties
