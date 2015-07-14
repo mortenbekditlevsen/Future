@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C1D912F1B1C2C090074458B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3904A31B1AF19800E4A444 /* Box.framework */; };
 		8C1D91301B1C2C090074458B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3904A41B1AF19800E4A444 /* Result.framework */; };
 		8C1D91331B1C30B40074458B /* FutureFunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D91321B1C30B40074458B /* FutureFunctionalTests.swift */; };
 		8C1D91351B1C3EDA0074458B /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1D91341B1C3EDA0074458B /* TestUtils.swift */; };
-		8C3904A51B1AF19800E4A444 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3904A31B1AF19800E4A444 /* Box.framework */; };
 		8C3904A61B1AF19800E4A444 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3904A41B1AF19800E4A444 /* Result.framework */; };
 		8C3904A91B1AF20700E4A444 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3904A81B1AF20700E4A444 /* Future.swift */; };
 		8C977AE31B1AF0B900047BF7 /* Future.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C977AE21B1AF0B900047BF7 /* Future.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,7 +30,6 @@
 /* Begin PBXFileReference section */
 		8C1D91321B1C30B40074458B /* FutureFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureFunctionalTests.swift; sourceTree = "<group>"; };
 		8C1D91341B1C3EDA0074458B /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
-		8C3904A31B1AF19800E4A444 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		8C3904A41B1AF19800E4A444 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		8C3904A81B1AF20700E4A444 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		8C977ADD1B1AF0B900047BF7 /* Future.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Future.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C3904A51B1AF19800E4A444 /* Box.framework in Frameworks */,
 				8C3904A61B1AF19800E4A444 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1D912F1B1C2C090074458B /* Box.framework in Frameworks */,
 				8C1D91301B1C2C090074458B /* Result.framework in Frameworks */,
 				8C977AE91B1AF0B900047BF7 /* Future.framework in Frameworks */,
 			);
@@ -70,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				8C977ADF1B1AF0B900047BF7 /* Future */,
-				8C3904A31B1AF19800E4A444 /* Box.framework */,
 				8C3904A41B1AF19800E4A444 /* Result.framework */,
 				8C977AEC1B1AF0B900047BF7 /* FutureTests */,
 				8C977ADE1B1AF0B900047BF7 /* Products */,
@@ -181,7 +175,9 @@
 		8C977AD41B1AF0B900047BF7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Le VanNghia";
 				TargetAttributes = {
 					8C977ADC1B1AF0B900047BF7 = {
@@ -234,7 +230,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			outputPaths = (
@@ -249,7 +244,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			outputPaths = (
@@ -312,6 +306,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,6 +390,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -417,6 +413,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -436,6 +433,7 @@
 				);
 				INFOPLIST_FILE = FutureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -450,6 +448,7 @@
 				);
 				INFOPLIST_FILE = FutureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

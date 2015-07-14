@@ -38,10 +38,10 @@ func requestStringFromNumber(number: Int) -> Future<String, NSError> {
     }
 }
 
-func requestStringLenght(string: String) -> Future<Int, NSError> {
+func requestStringLength(string: String) -> Future<Int, NSError> {
     return Future<Int, NSError> { completion in
         delay(1) {
-            completion(Result(value: count(string)))
+            completion(Result(value: string.characters.count))
         }
     }
 }

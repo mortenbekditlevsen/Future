@@ -44,7 +44,7 @@ extension FutureStateTests {
         let f = Future<Int, NSError>(value: 1)
         f.onComplete { result in
             switch result {
-            case .Success(let bv): XCTAssertEqual(bv.value, 1, "Future should return 1 in success result")
+            case .Success(let bv): XCTAssertEqual(bv, 1, "Future should return 1 in success result")
             case .Failure: XCTAssertFalse(true, "Future should complete with success result")
             }
         }
@@ -60,7 +60,7 @@ extension FutureStateTests {
         f.onComplete { result in
             switch result {
                 case .Success: XCTAssertFalse(true, "Future should complete with failure result")
-                case .Failure(let be): XCTAssertEqual(be.value, error, "Future should return 1 in success result")
+                case .Failure(let be): XCTAssertEqual(be, error, "Future should return 1 in success result")
             }
         }
        
@@ -79,7 +79,7 @@ extension FutureStateTests {
         
         f.onComplete { result in
             switch result {
-            case .Success(let bv): XCTAssertEqual(bv.value, 1, "Future should return 1 in success result")
+            case .Success(let bv): XCTAssertEqual(bv, 1, "Future should return 1 in success result")
             case .Failure: XCTAssertFalse(true, "Future should complete with success result")
             }
             expectation.fulfill()

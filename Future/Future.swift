@@ -82,7 +82,7 @@ public class Future<T, Error> {
     public func onSuccess(completion: T -> Void) {
         onComplete { result in
             switch result {
-                case .Success(let bv): completion(bv.value)
+                case .Success(let bv): completion(bv)
                 default: break
             }
         }
@@ -94,7 +94,7 @@ public class Future<T, Error> {
     public func onFailure(completion: Error -> Void) {
         onComplete { result in
             switch result {
-                case .Failure(let be): completion(be.value)
+                case .Failure(let be): completion(be)
                 default: break
             }
         }
@@ -112,8 +112,8 @@ extension Future {
         return Future<U, Error>(operation: { completion in
             self.onComplete { result in
                 switch result {
-                    case .Success(let bv): completion(Result(value: f(bv.value)))
-                    case .Failure(let be): completion(Result(error: be.value))
+                    case .Success(let bv): completion(Result(value: f(bv)))
+                    case .Failure(let be): completion(Result(error: be))
                 }
             }
         })
@@ -136,7 +136,7 @@ extension Future {
             self.onComplete { result in
                 switch result {
                 case .Success(let bv):
-                    let r = p(bv.value) ? Result(value: bv.value) : Result(error: noSuchElementError)
+                    let r = p(bv) ? Result(value: bv) : Result(error: noSuchElementError)
                     completion(r)
                 case .Failure: completion(result)
                 }
@@ -162,7 +162,7 @@ extension Future {
             self.onComplete { result in
                 switch result {
                 case .Success: completion(result)
-                case .Failure(let be): completion(Result(value: f(be.value)))
+                case .Failure(let be): completion(Result(value: f(be)))
                 }
             }
         })
@@ -188,8 +188,8 @@ public func flatten<T, Error>(future: Future<Future<T, Error>, Error>) -> Future
     return Future<T, Error>(operation: { completion in
         future.onComplete { result in
             switch result {
-            case .Success(let bf): bf.value.onComplete(completion)
-            case .Failure(let be): completion(Result(error: be.value))
+            case .Success(let bf): bf.onComplete(completion)
+            case .Failure(let be): completion(Result(error: be))
             }
         }
     })
@@ -197,7 +197,7 @@ public func flatten<T, Error>(future: Future<Future<T, Error>, Error>) -> Future
 
 // MARK: Printable
 
-extension Future: Printable {
+extension Future: CustomStringConvertible {
     public var description: String {
         return "result: \(result)\n"
             + "isCompleted: \(isCompleted)\n"
@@ -209,7 +209,7 @@ extension Future: Printable {
 
 // MARK: DebugPrintable
 
-extension Future: DebugPrintable {
+extension Future: CustomDebugStringConvertible {
     public var debugDescription: String {
         return description
     }
