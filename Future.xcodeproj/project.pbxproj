@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		588BBC911B86220800A01031 /* Future watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Future watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		588BBC911B86220800A01031 /* Future.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Future.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		588BBC921B86220800A01031 /* Future copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Future copy-Info.plist"; path = "/Users/mortenditlevsen/PrivateProjects/MyFuture/Future copy-Info.plist"; sourceTree = "<absolute>"; };
 		8C1D91321B1C30B40074458B /* FutureFunctionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureFunctionalTests.swift; sourceTree = "<group>"; };
 		8C1D91341B1C3EDA0074458B /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			children = (
 				8C977ADD1B1AF0B900047BF7 /* Future.framework */,
 				8C977AE81B1AF0B900047BF7 /* FutureTests.xctest */,
-				588BBC911B86220800A01031 /* Future watchOS.framework */,
+				588BBC911B86220800A01031 /* Future.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			);
 			name = "Future watchOS";
 			productName = Future;
-			productReference = 588BBC911B86220800A01031 /* Future watchOS.framework */;
+			productReference = 588BBC911B86220800A01031 /* Future.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8C977ADC1B1AF0B900047BF7 /* Future */ = {
@@ -373,7 +373,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Future;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -396,7 +396,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghialv.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Future;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
